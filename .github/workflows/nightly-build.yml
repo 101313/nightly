@@ -77,6 +77,7 @@ jobs:
       fail-fast: false
       matrix:
         target:
+        - aarch64-unkown-linux-musl
         - aarch64-apple-darwin
         - x86_64-apple-darwin
         - x86_64-pc-windows-msvc
@@ -88,6 +89,8 @@ jobs:
         - riscv64gc-unknown-linux-gnu
         extra: ['bin']
         include:
+        - target: aarch64-unkown-linux-musl
+        - os: alpinelinux
         - target: aarch64-apple-darwin
           os: macos-latest
           target_rustflags: ''
@@ -202,6 +205,7 @@ jobs:
       fail-fast: false
       matrix:
         target:
+        - aarch64-unkown-linux-musl
         - aarch64-apple-darwin
         - x86_64-apple-darwin
         - x86_64-pc-windows-msvc
@@ -211,6 +215,8 @@ jobs:
         - aarch64-unknown-linux-gnu
         extra: ['bin']
         include:
+        - target: aarch64-unkown-linux-musl
+          os: alpinelinux
         - target: aarch64-apple-darwin
           os: macos-latest
           target_rustflags: '--features=dataframe,extra'
